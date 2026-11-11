@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<!-- This document was coded by @bharath_boy || please do not remove this credit -->
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Techno Krrish | {{file_name}}</title>
+    <title>PAKHIR BOT | {{file_name}}</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +15,6 @@
     <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
 
     <style>
-        /* Stylesheet created by @bharath_boy || kindly retain this credit notice */
         :root {
             --primary-cyan: #06b6d4;
             --primary-purple: #8b5cf6;
@@ -46,7 +44,6 @@
             min-height: 100vh;
         }
 
-        /* The following styles were written by @bharath_boy || do not remove credit */
         #particle-canvas {
             position: fixed;
             top: 0;
@@ -75,7 +72,6 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
-        /* Code credit: @bharath_boy || this line should not be removed */
         .header {
             position: fixed;
             top: 0;
@@ -188,7 +184,6 @@
             display: block;
         }
 
-        /* Authored by @bharath_boy || please leave this credit intact */
         .mobile-nav a {
             display: block;
             padding: 1rem;
@@ -208,7 +203,6 @@
             z-index: 10;
             padding-top: 6rem;
             max-width: 1400px;
-            /* Default max-width */
             margin: 0 auto;
             padding-left: 2rem;
             padding-right: 2rem;
@@ -250,7 +244,6 @@
             display: block;
         }
 
-        /* This CSS was crafted by @bharath_boy || credit removal is not permitted */
         .info-panel {
             border-radius: 1.5rem;
             padding: 2rem;
@@ -279,6 +272,11 @@
             left: 100%;
         }
 
+        .file-info {
+            min-width: 0;
+            flex: 1;
+        }
+
         .file-info h4 {
             color: var(--text-muted);
             font-size: 0.875rem;
@@ -287,13 +285,7 @@
             margin-bottom: 0.5rem;
         }
 
-        .file-info {
-            /* Add this to allow the flex item to shrink below its content size */
-            min-width: 0;
-        }
-
         .file-name {
-            /* Add this to allow the long file name to wrap */
             word-break: break-word;
             font-family: 'Orbitron', monospace;
             font-size: 2rem;
@@ -312,6 +304,7 @@
             background: var(--primary-cyan);
             animation: blink 1s infinite;
             margin-left: 2px;
+            vertical-align: middle;
         }
 
         @keyframes blink {
@@ -367,7 +360,6 @@
             background: var(--primary-purple);
         }
 
-        /* Code by @bharath_boy || we request you keep the credit */
         .action-buttons {
             display: flex;
             gap: 1rem;
@@ -389,6 +381,7 @@
             overflow: hidden;
             background: linear-gradient(135deg, var(--primary-cyan), var(--primary-purple));
             color: white;
+            text-decoration: none;
         }
 
         .action-btn img {
@@ -465,6 +458,8 @@
             gap: 0.75rem;
             text-decoration: none;
             transition: all 0.3s ease;
+            cursor: pointer;
+            width: 100%;
         }
 
         .player-btn:hover {
@@ -473,7 +468,6 @@
             transform: scale(1.05);
         }
 
-        /* @bharath_boy is the author of this style block || please maintain attribution */
         .player-btn img {
             width: 24px;
             height: 24px;
@@ -497,7 +491,6 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            position: relative;
         }
 
         .cards-container {
@@ -527,13 +520,8 @@
             transition: opacity 0.3s ease;
         }
 
-        /* This section was styled by @bharath_boy || don't erase the credit */
         .info-card:hover::before {
             opacity: 0.6;
-        }
-
-        .info-card:hover {
-            transform: perspective(1000px) rotateX(5deg) rotateY(5deg) translateZ(20px);
         }
 
         .card-icon {
@@ -583,21 +571,19 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            color: white;
         }
 
         .card-btn:nth-child(1) {
             background: linear-gradient(135deg, var(--primary-cyan), #0891b2);
-            color: white;
         }
 
         .card-btn:nth-child(2) {
             background: linear-gradient(135deg, var(--primary-purple), #7c3aed);
-            color: white;
         }
 
         .card-btn:nth-child(3) {
             background: linear-gradient(135deg, var(--primary-pink), #db2777);
-            color: white;
         }
 
         .card-btn:hover {
@@ -710,28 +696,25 @@
             background: linear-gradient(var(--primary-cyan), var(--primary-purple));
             border-radius: 4px;
         }
-
-        /* Written by @bharath_boy || the credit should not be deleted */
     </style>
 </head>
 
 <body>
-    <!-- The author of this code is @bharath_boy || please keep the credit -->
     <canvas id="particle-canvas"></canvas>
     <div class="gradient-overlay"></div>
     <div class="cursor-dot"></div>
 
     <header class="header">
         <div class="header-content">
-            <a href="https://t.me/technokrrishofficial" class="logo">Techno Krrish</a>
+            <a href="https://t.me/pakhirrobot" class="logo">PAKHIR BOT STREAMING</a>
 
             <nav class="nav">
                 <a href="#video-section">Stream</a>
                 <a href="#explore-section">Explore</a>
-                <a href="https://t.me/technokrrishofficial">Contact</a>
+                <a href="https://t.me/PakhirAdminbot?direct">Contact Helpline</a>
             </nav>
 
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle mobile menu">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
@@ -739,70 +722,70 @@
         <nav class="mobile-nav" id="mobile-nav">
             <a href="#video-section" onclick="closeMobileMenu()">Stream</a>
             <a href="#explore-section" onclick="closeMobileMenu()">Explore</a>
-            <a href="https://t.me/technokrrishofficial" onclick="closeMobileMenu()">Contact</a>
+            <a href="https://t.me/PakhirAdminbot?direct" onclick="closeMobileMenu()">Contact Helpline</a>
         </nav>
     </header>
 
     <div class="main-container">
         <main>
-            <!-- Coded by @bharath_boy || it's requested not to remove the credit -->
             <section id="video-section" class="video-section">
                 <div class="video-container glass">
-                    <video id="player" playsinline controls data-poster="https://envs.sh/34_.jpg?x=bcb2b992">
+                    <video id="player" playsinline controls preload="auto" crossorigin="anonymous" data-poster="https://envs.sh/34_.jpg?x=bcb2b992">
                         <source src="{{file_url}}" type="video/mp4" />
+                        Your browser does not support the video tag.
                     </video>
                 </div>
 
                 <div class="info-panel glass">
                     <div class="file-info">
                         <h4>Now Streaming</h4>
-                        <h2 class="file-name" id="typewriter-target">{{file_name}}<span class="cursor"></span></h2>
+                        <h2 class="file-name" id="typewriter-target"><span class="cursor"></span></h2>
                     </div>
 
                     <div class="panel-actions">
                         <div class="size-control" title="Adjust Player Size">
                             <i class="fas fa-arrows-alt-h"></i>
-                            <input type="range" id="size-slider" min="70" max="95" value="70" step="1">
+                            <input type="range" id="size-slider" min="70" max="95" value="70" step="1" aria-label="Player size slider">
                         </div>
                         <div class="action-buttons">
-                            <button class="action-btn" onclick="blazeDownload()">
+                            <button type="button" class="action-btn" onclick="blazeDownload()">
                                 <i class="fas fa-download"></i>
-                                <span>Download</span>
+                                <span>Fast Download</span>
                             </button>
-                            <button class="action-btn secondary" onclick="vlc_player()">
+                            <button type="button" class="action-btn secondary" onclick="vlc_player(event)">
                                 <img src="https://i.postimg.cc/15TQ4y7B/vlc.png" alt="VLC">
                                 <span>VLC Player</span>
                             </button>
-                            <button class="action-btn tertiary" onclick="mx_player()">
+                            <button type="button" class="action-btn tertiary" onclick="mx_player(event)">
                                 <img src="https://i.postimg.cc/sx4Msv4T/mx.png" alt="MX Player">
                                 <span>MX Player</span>
                             </button>
-                            <button class="action-btn quaternary" id="more-players-btn" onclick="toggleMorePlayers()">
+                            <button type="button" class="action-btn quaternary" id="more-players-btn" onclick="toggleMorePlayers()">
                                 <i class="fas fa-ellipsis-h"></i>
                                 <span>More</span>
                             </button>
                             <div class="more-players-dropdown glass" id="more-players-dropdown">
                                 <div class="dropdown-grid">
-                                    <a href="#" class="player-btn" onclick="playit_player()">
+                                    <button type="button" class="player-btn" onclick="playit_player(event)">
                                         <img src="https://i.postimg.cc/RVGWYJFF/playit.png" alt="PLAYit">
                                         <span>PLAYit</span>
-                                    </a>
-                                    <a href="#" class="player-btn" onclick="km_player()">
+                                    </button>
+                                    <button type="button" class="player-btn" onclick="km_player(event)">
                                         <img src="https://i.postimg.cc/wT9tFQ9Z/km.png" alt="KMPlayer">
                                         <span>KMPlayer</span>
-                                    </a>
-                                    <a href="#" class="player-btn" onclick="s_player()">
+                                    </button>
+                                    <button type="button" class="player-btn" onclick="s_player(event)">
                                         <img src="https://i.postimg.cc/XYJr6NGg/s.png" alt="S Player">
                                         <span>S Player</span>
-                                    </a>
-                                    <a href="#" class="player-btn" onclick="hd_player()">
+                                    </button>
+                                    <button type="button" class="player-btn" onclick="hd_player(event)">
                                         <img src="https://i.postimg.cc/rFT43LNh/hd.png" alt="HD Player">
                                         <span>HD Player</span>
-                                    </a>
-                                    <a href="#" class="player-btn" onclick="mx_playerpro()">
-                                        <img src="https://i.postimg.cc/sx4Msv4T/mx.png" alt="MX Player pro">
+                                    </button>
+                                    <button type="button" class="player-btn" onclick="mx_playerpro(event)">
+                                        <img src="https://i.postimg.cc/sx4Msv4T/mx.png" alt="MX Player Pro">
                                         <span>MX Player Pro</span>
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -818,12 +801,12 @@
                         <div class="card-icon">
                             <img src="https://i.postimg.cc/L546cM3F/erasebg-transformed.png" alt="Channel Logo">
                         </div>
-                        <h3>Our Channels</h3>
-                        <p>Get the latest updates from our main channel for exclusive content and real-time
-                            notifications.</p>
+                        <h3>Our Main Channels</h3>
+                        <p>Get the latest updates from our main channel for exclusive content and real-time notifications.</p>
                         <div class="card-links">
-                            <a href="https://t.me/technokrrishofficial" class="card-btn">Join Blaze Updates</a>
-                            <a href="https://t.me/technokrrishofficial" class="card-btn">Anime Stickers</a>
+                            <a href="https://t.me/pakhirrobot" class="card-btn">ᴘᴀᴋʜɪʀ ʙᴏᴛ</a>
+                            <a href="https://t.me/bnchollypage" class="card-btn">ʙɴᴄ ᴏʀɢɪɴᴀʟꜱ</a>
+                            <a href="https://t.me/Rebel_CR" class="card-btn">SUPPORT CHAT</a>
                         </div>
                     </div>
 
@@ -831,33 +814,31 @@
                         <div class="card-icon">
                             <i class="fas fa-robot"></i>
                         </div>
-                        <h3>Our Bots</h3>
-                        <p>Interact with our intelligent bots for an enhanced streaming experience and automated
-                            assistance.</p>
-                        <div class="card-links">
-                            <a href="https://t.me/technokrrishofficial" class="card-btn">PosterFlix Bot</a>
-                            <a href="https://t.me/technokrrishofficial" class="card-btn">Thumb Changer</a>
-                            <a href="https://t.me/technokrrishofficial" class="card-btn">Forward Bot Pro</a>
-                            <!-- <a href="#" class="card-btn">Dummy Bot Button</a> -->
+                        <h3>Our BACKUP Channels</h3>
+                        <p>Join our Back up Channels For additional content we added here...</p>
+                        <div class="card-links"> 
+                            <a href="https://t.me/pakhirmoviebot" class="card-btn">ᴛᴇʟᴜɢᴜ ᴍᴏᴠɪᴇ ʜᴜʙ</a>
+                            <a href="https://t.me/pakhirbot" class="card-btn">ꜱᴇʀɪᴇꜱ ꜰʟᴇx</a>
+                            <a href="https://t.me/cartoonflexz" class="card-btn">ᴛᴇʟᴜɢᴜ ᴄᴀʀᴛᴏᴏɴ ᴡᴏʀʟᴅ</a>
                         </div>
                     </div>
                 </div>
             </section>
         </main>
     </div>
-    <!-- Credit @bharath_boy for this markup || do not delete this comment -->
+
     <footer class="footer">
-        <p>&copy; 2025 <a href="https://t.me/technokrrishofficial">Techno Krrish</a>. All Rights Reserved.</p>
+        <p>&copy; copyright 2026 <a href="https://t.me/pakhirrobot">ᴘᴀᴋʜɪʀ ʙᴏᴛ</a>. All Rights Reserved.</p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
 
     <script>
-        // Script authored by @bharath_boy || please do not remove credit.
-        // Global variables
         let particles = [];
         let mouse = { x: 0, y: 0 };
+        const rawFileName = "{{file_name}}";
+        const rawFileUrl = "{{file_url}}";
 
         document.addEventListener('DOMContentLoaded', () => {
             initializePlayer();
@@ -872,14 +853,13 @@
 
         function initializePlayer() {
             const player = new Plyr('#player', {
-                controls: ['play-large', 'rewind', 'play', 'fast-forward', 'progress', 'current-time', 'mute', 'volume', 'settings', 'captions', 'pip', 'airplay', 'fullscreen']
+                controls: ['play-large', 'rewind', 'play', 'fast-forward', 'progress', 'current-time', 'duration', 'mute', 'volume', 'settings', 'captions', 'pip', 'airplay', 'fullscreen']
             });
         }
 
-        // The following script is by @bharath_boy || kindly keep this credit.
-        // Advanced particle system
         function initializeParticles() {
             const canvas = document.getElementById('particle-canvas');
+            if (!canvas) return;
             const ctx = canvas.getContext('2d');
 
             function resizeCanvas() {
@@ -890,7 +870,6 @@
             resizeCanvas();
             window.addEventListener('resize', resizeCanvas);
 
-            // Create particles
             const particleCount = Math.floor((canvas.width * canvas.height) / 15000);
             for (let i = 0; i < particleCount; i++) {
                 particles.push({
@@ -908,15 +887,12 @@
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
 
                 particles.forEach((particle, i) => {
-                    // Update position
                     particle.x += particle.speedX;
                     particle.y += particle.speedY;
 
-                    // Bounce off edges
                     if (particle.x < 0 || particle.x > canvas.width) particle.speedX *= -1;
                     if (particle.y < 0 || particle.y > canvas.height) particle.speedY *= -1;
 
-                    // Mouse interaction
                     const dx = mouse.x - particle.x;
                     const dy = mouse.y - particle.y;
                     const distance = Math.sqrt(dx * dx + dy * dy);
@@ -927,19 +903,17 @@
                         particle.y -= (dy / distance) * force * 2;
                     }
 
-                    // Draw particle
                     ctx.beginPath();
                     ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
                     ctx.fillStyle = particle.color + Math.floor(particle.opacity * 255).toString(16).padStart(2, '0');
                     ctx.fill();
 
-                    // Draw connections
                     for (let j = i + 1; j < particles.length; j++) {
-                        const dx = particles[j].x - particle.x;
-                        const dy = particles[j].y - particle.y;
-                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        const dx2 = particles[j].x - particle.x;
+                        const dy2 = particles[j].y - particle.y;
+                        const distance2 = Math.sqrt(dx2 * dx2 + dy2 * dy2);
 
-                        if (distance < 120) {
+                        if (distance2 < 120) {
                             ctx.strokeStyle = particle.color + '20';
                             ctx.lineWidth = 0.5;
                             ctx.beginPath();
@@ -956,7 +930,6 @@
             animateParticles();
         }
 
-        // Author: @bharath_boy || credit removal is not allowed.
         function initializeAnimations() {
             document.querySelectorAll('.info-card').forEach(card => {
                 card.addEventListener('mousemove', (e) => {
@@ -964,13 +937,10 @@
                     const x = e.clientX - rect.left - rect.width / 2;
                     const y = e.clientY - rect.top - rect.height / 2;
 
-                    const rotateX = -y / 20;
-                    const rotateY = x / 20;
-
                     gsap.to(card, {
                         duration: 0.3,
-                        rotationX: rotateX,
-                        rotationY: rotateY,
+                        rotationX: -y / 20,
+                        rotationY: x / 20,
                         transformPerspective: 1000,
                         ease: 'power2.out'
                     });
@@ -982,30 +952,6 @@
                         rotationX: 0,
                         rotationY: 0,
                         ease: 'power2.out'
-                    });
-                });
-            });
-
-            document.querySelectorAll('.action-btn, .card-btn').forEach(btn => {
-                btn.addEventListener('mousemove', (e) => {
-                    const rect = btn.getBoundingClientRect();
-                    const x = e.clientX - rect.left - rect.width / 2;
-                    const y = e.clientY - rect.top - rect.height / 2;
-
-                    gsap.to(btn, {
-                        duration: 0.3,
-                        x: x * 0.2,
-                        y: y * 0.2,
-                        ease: 'power2.out'
-                    });
-                });
-
-                btn.addEventListener('mouseleave', () => {
-                    gsap.to(btn, {
-                        duration: 0.5,
-                        x: 0,
-                        y: 0,
-                        ease: 'elastic.out(1, 0.5)'
                     });
                 });
             });
@@ -1024,9 +970,10 @@
                 observer.observe(el);
             });
         }
-        // This function was coded by @bharath_boy || don't remove the credit line.
+
         function initializeCursor() {
             const cursor = document.querySelector('.cursor-dot');
+            if (!cursor) return;
 
             document.addEventListener('mousemove', (e) => {
                 mouse.x = e.clientX;
@@ -1039,19 +986,12 @@
                     ease: 'power2.out'
                 });
             });
-
-            document.addEventListener('mouseleave', () => {
-                cursor.style.opacity = '0';
-            });
-
-            document.addEventListener('mouseenter', () => {
-                cursor.style.opacity = '1';
-            });
         }
 
         function startTypewriter() {
             const target = document.getElementById('typewriter-target');
-            const text = '{{file_name}}';
+            if (!target) return;
+            const text = rawFileName;
             let displayText = '';
             let i = 0;
 
@@ -1061,6 +1001,8 @@
                     target.innerHTML = displayText + '<span class="cursor"></span>';
                     i++;
                     setTimeout(type, 100);
+                } else {
+                    target.innerHTML = text;
                 }
             }
 
@@ -1070,22 +1012,10 @@
         function toggleMobileMenu() {
             const mobileNav = document.getElementById('mobile-nav');
             const menuBtn = document.querySelector('.mobile-menu-btn i');
-
             mobileNav.classList.toggle('active');
-
-            if (mobileNav.classList.contains('active')) {
-                menuBtn.className = 'fas fa-times';
-                gsap.from('.mobile-nav a', {
-                    duration: 0.3,
-                    y: 20,
-                    opacity: 0,
-                    stagger: 0
-                });
-            } else {
-                menuBtn.className = 'fas fa-bars';
-            }
+            menuBtn.className = mobileNav.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars';
         }
-        // @bharath_boy wrote this script || please maintain the credit.
+
         function closeMobileMenu() {
             document.getElementById('mobile-nav').classList.remove('active');
             document.querySelector('.mobile-menu-btn i').className = 'fas fa-bars';
@@ -1093,9 +1023,12 @@
 
         function blazeDownload() {
             const link = document.createElement('a');
-            link.href = '{{file_url}}';
-            link.download = '{{file_name}}';
+            link.href = rawFileUrl;
+            link.download = rawFileName;
+            link.target = '_blank';
+            document.body.appendChild(link);
             link.click();
+            document.body.removeChild(link);
             showNotification('Download started!');
         }
 
@@ -1130,68 +1063,18 @@
             }, 3000);
         }
 
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        function throttle(func, limit) {
-            let inThrottle;
-            return function () {
-                const args = arguments;
-                const context = this;
-                if (!inThrottle) {
-                    func.apply(context, args);
-                    inThrottle = true;
-                    setTimeout(() => inThrottle = false, limit);
-                }
-            };
-        }
-
-        document.addEventListener('mousemove', throttle((e) => {
-            mouse.x = e.clientX;
-            mouse.y = e.clientY;
-        }, 16));
-
-        window.addEventListener('load', () => {
-            gsap.from('.main-container', {
-                opacity: 0,
-                y: 50,
-                duration: 1,
-                ease: 'power3.out'
-            });
-
-            gsap.from('.header', {
-                opacity: 0,
-                y: -50,
-                duration: 0.8,
-                ease: 'power3.out'
-            });
-        });
-
         function initializeSizeControl() {
             const sizeSlider = document.getElementById('size-slider');
             const mainContainer = document.querySelector('.main-container');
+            if (!sizeSlider || !mainContainer) return;
 
-            // Check if the viewport matches the mobile media query (<= 768px)
             if (window.matchMedia('(max-width: 768px)').matches) {
-                // On mobile, set the slider's value to its maximum
                 sizeSlider.value = sizeSlider.max;
             }
 
-            // Get the initial width from the slider's value (either default 70 or max 95 for mobile)
             const defaultWidth = sizeSlider.value;
             mainContainer.style.maxWidth = defaultWidth >= 95 ? '1400px' : `${defaultWidth}vw`;
 
-            // Add the event listener to handle changes
             sizeSlider.addEventListener('input', (e) => {
                 const newWidth = e.target.value;
                 mainContainer.style.maxWidth = newWidth >= 95 ? '1400px' : `${newWidth}vw`;
@@ -1202,63 +1085,55 @@
             const dropdown = document.getElementById('more-players-dropdown');
             const infoPanel = document.querySelector('.info-panel');
             dropdown.classList.toggle('active');
-
-            if (dropdown.classList.contains('active')) {
-                infoPanel.style.overflow = 'visible';
-            } else {
-                infoPanel.style.overflow = 'hidden';
-            }
+            infoPanel.style.overflow = dropdown.classList.contains('active') ? 'visible' : 'hidden';
         }
 
         function initializeDropdown() {
             const dropdownBtn = document.getElementById('more-players-btn');
             const dropdown = document.getElementById('more-players-dropdown');
             const infoPanel = document.querySelector('.info-panel');
+            if (!dropdownBtn || !dropdown) return;
 
             window.addEventListener('click', function (e) {
                 if (!dropdownBtn.contains(e.target) && !dropdown.contains(e.target)) {
                     if (dropdown.classList.contains('active')) {
                         dropdown.classList.remove('active');
-                        infoPanel.style.overflow = 'hidden';
+                        if (infoPanel) infoPanel.style.overflow = 'hidden';
                     }
                 }
             });
         }
 
-        document.addEventListener("contextmenu", function (e) {
-            e.preventDefault();
-        }),
-            document.addEventListener("keydown", function (e) {
-                ("F12" === e.key ||
-                    (e.ctrlKey && e.shiftKey && "I" === e.key) ||
-                    (e.ctrlKey && "u" === e.key) ||
-                    e.ctrlKey ||
-                    e.shiftKey ||
-                    e.altKey) &&
-                    e.preventDefault();
-            });
-
-        const getCurrentUrl = () => {
-            // This gets the video URL from the player's source
-            // Note: This is a simplified approach. The {{file_url}} is rendered server-side.
-            // For a pure client-side solution, you would need the URL available in JS.
-            // Let's assume the URL is accessible for the functions.
-            return document.querySelector('#player source').src;
-        };
-        const videoUrl = getCurrentUrl();
-        const e = videoUrl;
-        // Credit for this JavaScript goes to @bharath_boy || please do not remove.
-        function vlc_player() { const x = e.replace(/^https?:\/\//, ""); window.location.href = `vlc://${x}`; event.preventDefault(); }
-        function mx_player() { window.location.href = `intent:${e}#Intent;action=android.intent.action.VIEW;type=video/*;package=com.mxtech.videoplayer.ad;end`; event.preventDefault(); }
-        function mx_playerpro() { window.location.href = `intent:${e}#Intent;action=android.intent.action.VIEW;type=video/*;package=com.mxtech.videoplayer.pro;end`; event.preventDefault(); }
-        function playit_player() { window.location.href = `playit://playerv2/video?url=${e}`; event.preventDefault(); }
-        function km_player() { window.location.href = `intent:${e}#Intent;package=com.kmplayer;end`; event.preventDefault(); }
-        function s_player() { window.location.href = `intent:${e}#Intent;action=com.young.simple.player.playback_online;package=com.young.simple.player;end`; event.preventDefault(); }
-        function hd_player() { window.location.href = `intent:${e}#Intent;package=uplayer.video.player;end`; event.preventDefault(); }
-        // Coded by @bharath_boy || the credit must be kept.
+        function vlc_player(event) {
+            if (event) event.preventDefault();
+            const cleanUrl = rawFileUrl.replace(/^https?:\/\//, "");
+            window.location.href = `vlc://${cleanUrl}`;
+        }
+        function mx_player(event) {
+            if (event) event.preventDefault();
+            window.location.href = `intent:${rawFileUrl}#Intent;action=android.intent.action.VIEW;type=video/*;package=com.mxtech.videoplayer.ad;end`;
+        }
+        function mx_playerpro(event) {
+            if (event) event.preventDefault();
+            window.location.href = `intent:${rawFileUrl}#Intent;action=android.intent.action.VIEW;type=video/*;package=com.mxtech.videoplayer.pro;end`;
+        }
+        function playit_player(event) {
+            if (event) event.preventDefault();
+            window.location.href = `playit://playerv2/video?url=${encodeURIComponent(rawFileUrl)}`;
+        }
+        function km_player(event) {
+            if (event) event.preventDefault();
+            window.location.href = `intent:${rawFileUrl}#Intent;package=com.kmplayer;end`;
+        }
+        function s_player(event) {
+            if (event) event.preventDefault();
+            window.location.href = `intent:${rawFileUrl}#Intent;action=com.young.simple.player.playback_online;package=com.young.simple.player;end`;
+        }
+        function hd_player(event) {
+            if (event) event.preventDefault();
+            window.location.href = `intent:${rawFileUrl}#Intent;package=uplayer.video.player;end`;
+        }
     </script>
 </body>
 
 </html>
-
-<!-- working -->
